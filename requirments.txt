@@ -5,3 +5,5 @@ sumy
 numpy
 sqlalchemy
 flask
+gunicorn
+psycopg2

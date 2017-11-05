@@ -13,10 +13,15 @@ setup(
                       'sumy',
                       'numpy',
                       'sqlalchemy',
-                      'flask'],
+                      'flask',
+                      'gunicorn',
+                      'psycopg2'],
     entry_points={
         'console_scripts': [
             'rqm_update_videos_from_youtube=random_quote_machine.job:update_videos_from_youtube'
         ]
-    }
+    },
+    scripts=[
+        'scripts/rqm_web'
+    ]
 )

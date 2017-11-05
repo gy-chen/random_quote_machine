@@ -1,0 +1,1 @@
+web: gunicorn random_quote_machine.web:app --log-file -
