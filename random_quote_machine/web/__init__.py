@@ -13,6 +13,7 @@ app = Flask(__name__)
 def quote_random():
     session = model.Session()
     quote = random.choice(session.query(model.Quote).all())
+    session.close()
     return jsonify(quote=model.model_to_dict(quote),
                    video=model.model_to_dict(quote.video))
 
@@ -24,5 +25,7 @@ def quote(quote_id):
         quote = session.query(model.Quote).filter(model.Quote.id == quote_id).one()
     except NoResultFound:
         abort(404)
+    finally:
+        session.close()
     return jsonify(quote=model.model_to_dict(quote),
                    video=model.model_to_dict(quote.video))
