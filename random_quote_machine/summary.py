@@ -1,11 +1,14 @@
 # coding: utf-8
 
+import nltk
 from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lsa import LsaSummarizer as Summarizer
 from sumy.nlp.stemmers import Stemmer
 from sumy.utils import get_stop_words
 from random_quote_machine.video import subtitles_to_text
+
+nltk.download('punkt')
 
 LANGUAGE = "english"
 SENTENCES_COUNT = 3
