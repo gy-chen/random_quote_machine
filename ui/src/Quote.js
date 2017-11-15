@@ -9,7 +9,7 @@ const Quote = (props) => {
             <div className="card-body">
                 <blockquote className="blockquote">
                     <p>{quote}</p>
-                    <footer class="blockquote-footer">
+                    <footer className="blockquote-footer">
                         <cite><a href={url} target="_blank" className="card-link text-secondary">{title}</a></cite>
                     </footer>
                 </blockquote>

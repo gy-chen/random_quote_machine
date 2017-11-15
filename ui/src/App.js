@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Quote from './Quote';
-import { fetchRandomQuote } from './service/quote';
+import {fetchRandomQuote} from './service/quote';
 
 class App extends Component {
 
@@ -15,7 +15,7 @@ class App extends Component {
     async componentDidMount() {
         const quote = await fetchRandomQuote();
         this.setState({
-           quote
+            quote
         });
     }
 
@@ -32,8 +32,8 @@ class App extends Component {
 
     render() {
         return (
-            <div className="container-fluid">
-                <div className="row justify-content-center">
+            <div className="container-fluid d-flex h-100">
+                <div className="row justify-content-center align-self-center">
                     <div className="col-md-6 col-sm-12">
                         {this._renderQuote()}
                     </div>
