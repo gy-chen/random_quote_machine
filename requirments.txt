@@ -7,3 +7,4 @@ sqlalchemy
 flask
 gunicorn
 psycopg2
+flask-cors
