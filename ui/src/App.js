@@ -12,7 +12,11 @@ class App extends Component {
         };
     }
 
-    async componentDidMount() {
+    componentDidMount() {
+        this._fetchRandomQuote();
+    }
+
+    async _fetchRandomQuote() {
         const quote = await fetchRandomQuote();
         this.setState({
             quote
@@ -26,13 +30,13 @@ class App extends Component {
         const {quote: {quote}} = this.state.quote;
         const {video: {title, url}} = this.state.quote;
         return (
-            <Quote quote={quote} title={title} url={url}/>
+            <Quote quote={quote} title={title} url={url} onRefresh={() => this._fetchRandomQuote()}/>
         );
     }
 
     render() {
         return (
-            <div className="container-fluid d-flex h-100">
+            <div className="container d-flex justify-content-center h-100">
                 <div className="row justify-content-center align-self-center">
                     <div className="col-md-6 col-sm-12">
                         {this._renderQuote()}
