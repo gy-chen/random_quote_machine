@@ -15,7 +15,8 @@ setup(
                       'sqlalchemy',
                       'flask',
                       'gunicorn',
-                      'psycopg2'],
+                      'psycopg2',
+                      'flask-cors'],
     entry_points={
         'console_scripts': [
             'rqm_update_videos_from_youtube=random_quote_machine.job:update_videos_from_youtube'

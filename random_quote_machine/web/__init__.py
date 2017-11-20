@@ -3,10 +3,12 @@ import random
 from flask import Flask
 from flask import jsonify
 from flask import abort
-from random_quote_machine import model
+from flask_cors import CORS
+from random_quote_machine import model, setting
 from sqlalchemy.orm.exc import NoResultFound
 
 app = Flask(__name__)
+CORS(app, origins=setting.origings)
 
 
 @app.route('/quote/random')
