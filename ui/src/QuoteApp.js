@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Quote from './Quote';
+import nprogress from 'nprogress';
 import {fetchRandomQuote} from './service/quote';
 
 class QuoteApp extends Component {
@@ -17,7 +18,9 @@ class QuoteApp extends Component {
     }
 
     async _fetchRandomQuote() {
+        nprogress.start();
         const quote = await fetchRandomQuote();
+        nprogress.done();
         this.setState({
             quote
         });
